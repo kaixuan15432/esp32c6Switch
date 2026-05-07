@@ -1,0 +1,30 @@
+# Build artifacts
+build/
+bin/
+bootloader/
+bootloader-prefix/
+compile_commands.json
+build_log.txt
+
+# ESP-IDF / Matter generated
+managed_components/
+dependencies.lock
+sdkconfig
+config.env
+
+# Flash args
+*.flash_args
+flash_args.in
+flash_project_args
+flasher_args.json
+
+# Local environment
+.env
+.vscode/
+.idea/
+python
+python3
+
+# SDKs (if accidentally copied)
+esp-idf/
+esp-matter/

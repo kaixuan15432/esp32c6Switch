@@ -8,6 +8,14 @@ CONFIG_IDF_TARGET="esp32c6"
 # ================================================================
 CONFIG_ESP_MATTER_ENABLE_DATA_MODEL=y
 
+# 传输层配置：切换到 Matter over Thread (低功耗)
+CONFIG_ESP_MATTER_TRANSPORT_THREAD=y
+CONFIG_ESP_MATTER_TRANSPORT_WIFI=n
+CONFIG_OPENTHREAD_ENABLED=y
+
+# 设置为睡眠终端设备 (Sleepy End Device - SED) 以极大延长电池寿命
+CONFIG_OPENTHREAD_DEVICE_ROLE_SED=y
+
 # Matter 设备基本信息（可按需修改）
 CONFIG_DEVICE_VENDOR_ID=0xFFF1          # 测试用 VID（非商业产品）
 CONFIG_DEVICE_PRODUCT_ID=0x8000         # 自定义 PID
@@ -23,7 +31,7 @@ CONFIG_ESP_WIFI_PASSWORD="YOUR_WIFI_PASSWORD"
 # ================================================================
 CONFIG_BT_ENABLED=y
 CONFIG_BT_NIMBLE_ENABLED=y
-CONFIG_BT_NIMBLE_MEM_ALLOC_MODE_EXTERNAL=y
+CONFIG_BT_NIMBLE_MEM_ALLOC_MODE_INTERNAL=y
 
 # ================================================================
 # 分区表（Matter 需要较大 NVS 和 OTA 分区）
